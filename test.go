@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strings"
 
 	btcvanity "github.com/MarinX/btc-vanity"
 )
@@ -14,24 +13,16 @@ func main() {
 		// buffered channel, more buffer, faster to find matching pattern
 		Buffer: 5,
 		// if you want to use testnet, set true
-		TestNet: false,
+		TestNet: true,
 	}
 
-	//btc := btcvanity.New(cfg)
+	btc := btcvanity.New(cfg)
 
 	// find a patters eg adddress which starts with "ab"
 	pattern := "brand"
-	suffix := ""
-	var address btcvanity.IWallet
-	var err error
-	for !strings.EqualFold(suffix, pattern) {
-		btc := btcvanity.New(cfg)
-		address, err = btc.Find("b")
-		if err != nil {
-			panic(err)
-		}
-		pub := address.PublicKey()
-		suffix = pub[len(pub)-len(pattern):]
+	address, err := btc.Find(pattern)
+	if err != nil {
+		panic(err)
 	}
 
 	// print our custom public key
