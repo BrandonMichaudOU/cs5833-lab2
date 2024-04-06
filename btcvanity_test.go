@@ -19,10 +19,10 @@ func TestBTCVanity(t *testing.T) {
 	}
 
 	pubKey := strings.ToLower(wallet.PublicKey())
-	expected := "1ab"
+	expected := "ab"
 
-	hasPrefix := strings.HasPrefix(pubKey, expected)
-	if !hasPrefix {
+	hasSuffix := strings.HasSuffix(pubKey, expected)
+	if !hasSuffix {
 		t.Errorf("Wrong generated wallet, got %v expected %v\n", pubKey, expected)
 	}
 

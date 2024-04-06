@@ -8,8 +8,8 @@ func TestMatcher(t *testing.T) {
 		Pattern  string
 		Expected bool
 	}{
-		"1HvA9A8mVVJMhdLduC4NZpV4JQimNR3n4c": {"h", true},
-		"1HvA9A8mVVJMhdLduC4NZpV4JQimNR3n4d": {"hva", true},
+		"1HvA9A8mVVJMhdLduC4NZpV4JQimNR3n4c": {"c", true},
+		"1HvA9A8mVVJMhdLduC4NZpV4JQimNR3n4d": {"n4d", true},
 		"1HvA9A8mVVJMhdLduC4NZpV4JQimNR3n4e": {"Z", false},
 		"HvA9A8mVVJMhdLduC4NZpV4JQimNR3n4c":  {"H", false},
 	}
